@@ -1,0 +1,18 @@
+https://www.youtube.com/watch?v=gAkwW2tuIqE
+https://docs.docker.com/get-started/docker_cheatsheet.pdf
+
+imagename = username/projectname:version
+
+docker build -t <imagename> dockerfilepath(.)
+
+docker push <imagename>
+docker pull <imagename>
+
+docker run -p 5000:8080 <imagename> 
+
+start cmd session inside container
+docker exec
+
+
+docker compose up
+docker compose down
