@@ -1,16 +1,20 @@
 version: '3'
 services:
-  web:
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017" # Map container port 27017 to host port 27017
+    volumes:
+      - mongo-data:/data/db # Optional volume to persist data
+
+  app:
     build: .
     ports:
       - "8080:8080"
+    depends_on:
+      - mongodb # Make sure app starts after mongodb
 
-  db:
-    image: imageName
-    environment:
-      - paswword=paswword
-    volumes:
-      -db-data:/foo
 
 volumes:
-  db-data:
+  mongo-data:

@@ -8,7 +8,7 @@ docker build -t <imagename> dockerfilepath(.)
 docker push <imagename>
 docker pull <imagename>
 
-docker run -p 5000:8080 <imagename> 
+docker run -p 8000:8000 --restart unless-stopped <imagename> 
 
 start cmd session inside container
 docker exec
@@ -16,3 +16,16 @@ docker exec
 
 docker compose up
 docker compose down
+
+
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+
+https://containrrr.dev/watchtower/
+
+docker run -d \
+  --name watchtower \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower --interval 300
