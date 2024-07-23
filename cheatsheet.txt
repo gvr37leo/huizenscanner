@@ -8,7 +8,7 @@ docker build -t <imagename> dockerfilepath(.)
 docker push <imagename>
 docker pull <imagename>
 
-docker run -p 8000:8000 --restart unless-stopped <imagename> 
+docker run -d -p 8000:8000 --restart unless-stopped <imagename> 
 
 start cmd session inside container
 docker exec
